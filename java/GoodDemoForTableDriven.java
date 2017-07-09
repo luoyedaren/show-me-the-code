@@ -1,14 +1,20 @@
+package java;
+
+import java.util.Formatter;
+
 /**
  * Demo of more compact, maintainable, table driven code.
  */
-public class GoodDemo {
+class GoodDemo {
  
     /** cutoff quantify column in rate table */
     private static final int CUTOFF = 0;
  
     /** rate column in rate table */
     private static final int RATE = 1;
- 
+
+    private static final double MAX_VALUE = 0;
+
     /** quantity vs rate table */
     private static final double[][] RATE_TBL = new double[][] { // CUTOFF RATE
     new double[] { 10, 1.50 }, new double[] { 100, 1.00 },
@@ -51,3 +57,4 @@ Extended cost for 625 widgets: $593.75
 Extended cost for 3125 widgets: $2906.25
 Extended cost for 15625 widgets: $14218.75
 Extended cost for 78125 widgets: $70312.50
+**/

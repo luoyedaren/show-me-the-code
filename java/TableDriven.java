@@ -1,3 +1,5 @@
+package java;
+
 enum GradeLevel {
   A(90, "优秀"),
   B(80, "良好"),
@@ -12,13 +14,13 @@ enum GradeLevel {
     this.min= min;
     this.desc = desc;
   }
-}
- 
 public static String getLevel(int mark) {
-  for(GradeLevel gl: GradeLevel.values()) {
+  for (GradeLevel gl : GradeLevel.values()) {
     if (mark >= gl.min) {
       return gl.desc;
     }
   }
   return "出错了";
 }
+}
+
