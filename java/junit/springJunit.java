@@ -1,4 +1,9 @@
 /**
+JUnit 4 
+Spring Test （Spring框架中的test包）
+Spring 相关其他依赖包（不再赘述了，就是context等包）
+
+
 <dependency>  
             <groupId>junit</groupId>  
             <artifactId>junit</artifactId>  
