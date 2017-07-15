@@ -1,20 +1,25 @@
 package com.mine.junit.easymock;
 
-import org.easymock.*;
+import com.mine.junit.LoginServlet;
+import org.junit.Test;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class LoginServletTest {  
   // 测试登陆失败  
-  @Test  
+  @Test
    public void testLoginFailed() throws Exception {  
         // 使用 EasyMock 生成 Mock 对象；  
         MockControl mc = MockControl.createControl(HttpServletRequest.class);  
         HttpServletRequest request = (HttpServletRequest)mc.getMock();  
         // 设定 Mock 对象的预期行为和输出；  
         request.getParameter("username");  
-        mc.setReturnValue("admin", 1);  
+        mc.setReturnValue("admin", 1);
         request.getParameter("password");  
         mc.setReturnValue("1234", 1);  
         // 将 Mock 对象切换到 Replay 状态；  
@@ -58,7 +63,7 @@ public class LoginServletTest {
         dispatcherCtrl.replay();  
           // 里面会调用 Mock 对象方法进行单元测试；  
         //为了让getServletContext()方法返回我们创建的ServletContext Mock对象，我们定义一个匿名类并覆写getServletContext()方法：  
-        LoginServlet servlet = new LoginServlet() {  
+        LoginServlet servlet = new LoginServlet() {
             public ServletContext getServletContext() {  
                 return contextObj;  
             }  
