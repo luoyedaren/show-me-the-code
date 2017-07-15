@@ -1,4 +1,4 @@
-package java;
+package mine.java.table.drivens;
 
 enum GradeLevel {
   A(90, "优秀"),

@@ -1,4 +1,4 @@
-package java;
+package mine.java.table.drivens;
 
 import java.util.Formatter;
 
