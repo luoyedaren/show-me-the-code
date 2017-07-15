@@ -1,4 +1,4 @@
-package mine.java.table.drivens.java.java8;
+package com.mine.java8;
 
 import java.util.Optional;
 import java.util.stream.Stream;

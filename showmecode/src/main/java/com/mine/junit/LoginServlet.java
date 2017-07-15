@@ -1,7 +1,9 @@
-import java.io.*;  
-import javax.servlet.*;  
-import javax.servlet.http.*;  
-  
+package com.mine.junit;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.IOException;
+
 public class LoginServlet extends HttpServlet {  
   
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  

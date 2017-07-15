@@ -1,7 +1,10 @@
-import javax.servlet.*;  
-import javax.servlet.http.*;  
-import org.easymock.*;  
-  
+package com.mine.junit.easymock;
+
+import org.easymock.*;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+
 public class LoginServletTest {  
   // 测试登陆失败  
   @Test  
