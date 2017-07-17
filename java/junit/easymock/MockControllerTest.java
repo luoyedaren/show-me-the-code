@@ -31,17 +31,17 @@ public class MockControllerTest extends BasicControllerTest {
 
 	@Test
 	public void showAnalyseCustomerList() throws Exception {
-		mockMvc.perform(get("http://localhost:8080/housemarket.customer.showanalysecustomerlist")
+		String responsString = mockMvc.perform(get("http://localhost:8080/housemarket.customer.showanalysecustomerlist")
 				.accept(MediaType.parseMediaType("application/json;charset=UTF-8"))
 				.param("method", "housemarket.customer.showanalysecustomerlist")
-				.param(""))
+				.param("accountId","123")
+				.param("adminId","596885d2c05c3313187b0a02")
+		)
 				.andExpect(status().isOk())
 				.andExpect(content().contentType("application/json;charset=UTF-8"))
-				.andDo(MockMvcResultHandlers.log());
-	}
+				.andDo(MockMvcResultHandlers.log()).andReturn().getResponse().getContentAsString();
 
-	@Test
-	public void countByProjectId() throws Exception {
+		log.debug("housemarket.customer.showanalysecustomerlist 返回的结构是 {}", responsString);
 	}
 
 }
