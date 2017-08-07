@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+
+    <classPathEntry location="D:\repository\mysql\mysql-connector-java\5.1.40\mysql-connector-java-5.1.40.jar"/>
+
+    <!-- data base set configure -->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <plugin type="com.fdc.dmp.service.plugin.SimpleMybatisPlugin"></plugin>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--mysql数据库链接URL，用户名、密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.146:3306/yf_dmp"
+                        userId="root" password="123456">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="com.fdc.dmp.service.inter.domain.generation" targetProject="F:\IDEAL-home\dmp\dmp-service\dmp-service-inter\src\main\java\">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+            <property name="useActualColumnNames" value="true" />
+        </javaModelGenerator>
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="domainxml" targetProject="F:\IDEAL-home\dmp\dmp-web\src\main\resources\">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.fdc.dmp.service.inter.dao.generation"
+                             targetProject="F:\IDEAL-home\dmp\dmp-service\dmp-service-inter\src\main\java\">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 要生成哪些表-->
+
+        <table tableName="view_page_data" domainObjectName="ViewPageData">
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+
+
+
+    </context>
+</generatorConfiguration>
